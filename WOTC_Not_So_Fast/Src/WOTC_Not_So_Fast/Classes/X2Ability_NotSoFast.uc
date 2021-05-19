@@ -25,12 +25,10 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnCyberusM1Init','SpawnCyberusM1Trigger'));
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnCyberusM2Init','SpawnCyberusM2Trigger'));
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnCyberusM3Init','SpawnCyberusM3Trigger'));
-	//Templates.AddItem(CreateSpawnNextUnitInit('SpawnAdvPsiWitchM2Init','SpawnAdvPsiWitchM2Trigger'));
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnAdvPsiWitchM3Init','SpawnAdvPsiWitchM3Trigger'));	
 	Templates.AddItem(CreateSpawnNextUnitTrigger('SpawnCyberusM1Trigger', 'Cyberus', ''));
 	Templates.AddItem(CreateSpawnNextUnitTrigger('SpawnCyberusM2Trigger', 'Cyberus', 'AdvCaptainM2'));
 	Templates.AddItem(CreateSpawnNextUnitTrigger('SpawnCyberusM3Trigger', 'Cyberus', 'AdvCaptainM3'));
-	//Templates.AddItem(CreateSpawnNextUnitTrigger('SpawnAdvPsiWitchM2Trigger', 'AdvPsiWitchM3', ''));
 	Templates.AddItem(CreateSpawnNextUnitTrigger('SpawnAdvPsiWitchM3Trigger', 'AdvPsiWitchM3', ''));
 	return Templates;
 }

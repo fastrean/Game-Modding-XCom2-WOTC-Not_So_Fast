@@ -1,6 +1,5 @@
 class X2Effect_NotSoFastSpawnNextUnit extends X2Effect_SpawnUnit;
 
-var array<name> DefaultDeadUnitNames;
 var name NextUnitToSpawn;
 var name DeadUnitName;
 var name SpawnAbilityToAdd;
@@ -116,18 +115,7 @@ simulated function ModifyAbilitiesPreActivation(StateObjectReference NewUnitRef,
 	local AbilitySetupData Data, EmptyData;
 	local X2AbilityTemplateManager AbilityTemplateMan;
 	local XComGameState_Unit DeadUnitGameState;
-	/*
-	if (DeadUnitName == 'AdvCaptainM2')
-	{
-		AbilityData.AddItem(AddtionalAbility('SpawnAdvPsiWitchM2Init'));
-		AbilityData.AddItem(AddtionalAbility('SpawnAdvPsiWitchM2Trigger'));
-	}
-	else if (DeadUnitName == 'AdvCaptainM3')
-	{
-		AbilityData.AddItem(AddtionalAbility('SpawnAdvPsiWitchM3Init'));
-		AbilityData.AddItem(AddtionalAbility('SpawnAdvPsiWitchM3Trigger'));
-	}
-	*/	
+
 	switch(DeadUnitName)
 	{
 		case 'AdvCaptainM2':	
@@ -149,7 +137,4 @@ defaultproperties
 	bCopyReanimatedFromUnit=false
 	bCopyReanimatedStatsFromUnit=false
 	bSetProcessedScamperAs=false
-	DefaultDeadUnitNames(0)="AdvCaptainM1"
-    DefaultDeadUnitNames(1)="AdvCaptainM2"
-	DefaultDeadUnitNames(2)="AdvCaptainM3"
 }

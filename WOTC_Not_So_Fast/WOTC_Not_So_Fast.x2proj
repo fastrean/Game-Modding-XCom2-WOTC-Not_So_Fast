@@ -22,13 +22,31 @@ when Codex get kill, have a chance to spwan a Avatar</Description>
     <Content Include="Config\XComNotSoFastData.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Localization\XComGame.chn">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ReadMe.txt" />
     <Content Include="ModPreview.jpg" />
     <Content Include="Config\XComEditor.ini" />
     <Content Include="Config\XComEngine.ini" />
     <Content Include="Config\XComGame.ini" />
     <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\WOTC_Not_So_Fast\Classes\X2Ability_NotSoFast.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\WOTC_Not_So_Fast\Classes\X2DownloadableContentInfo_WOTC_Not_So_Fast.uc" />
+    <Content Include="Src\WOTC_Not_So_Fast\Classes\X2Effect_NotSoFastSpawnNextUnit.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_Not_So_Fast\Classes\X2Effect_NotSoFastSpawnNextUnitInit.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_Not_So_Fast\Classes\X2Helpers_Not_So_Fast.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\WOTC_Not_So_Fast\Classes\XComGameState_Effect_NotSoFast.uc">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
 </Project>
