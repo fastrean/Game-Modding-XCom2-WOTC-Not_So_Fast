@@ -1,27 +1,10 @@
 class X2Ability_NotSoFast extends X2Ability
 	config(NotSoFastData);
 
-struct NextSpawnProperties
-{
-	var config name DeadUnit;
-	var config name	NextSpawnUnits;
-	var config name SpawnNextUnitInit;
-	var config name	SpawnAbilityName;
-};
-	
-var config array<NextSpawnProperties> NextSpawnUnitList;
-
 static function array<X2DataTemplate> CreateTemplates()
 {
 	local array<X2DataTemplate> Templates;
-	local int i;
-/*
-	for(i=0; i<default.NextSpawnUnitList.length; ++i)
-	{
-		Templates.AddItem(CreateSpawnNextUnitInit(default.NextSpawnUnitList[i].SpawnNextUnitInit, default.NextSpawnUnitList[i].SpawnAbilityName));
-		Templates.AddItem(CreateSpawnNextUnitTrigger(default.NextSpawnUnitList[i].SpawnAbilityName, default.NextSpawnUnitList[i].NextSpawnUnits));
-	}
-	*/
+
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnCyberusM1Init','SpawnCyberusM1Trigger'));
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnCyberusM2Init','SpawnCyberusM2Trigger'));
 	Templates.AddItem(CreateSpawnNextUnitInit('SpawnCyberusM3Init','SpawnCyberusM3Trigger'));
@@ -37,8 +20,9 @@ static function X2AbilityTemplate CreateSpawnNextUnitInit(name AbilityTemplateNa
 {
 	local X2AbilityTemplate						Template;
 	local X2Effect_NotSoFastSpawnNextUnitInit	SpawnNextUnitInit;
+	
 	`CREATE_X2ABILITY_TEMPLATE(Template, AbilityTemplateName);
-
+	Template.IconImage = "img:///UILibrary_XPACK_Common.PerkIcons.UIPerk_spectralarmy";
 	Template.AbilitySourceName = 'eAbilitySource_Item';
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
 	Template.Hostility = eHostility_Neutral;
@@ -50,6 +34,7 @@ static function X2AbilityTemplate CreateSpawnNextUnitInit(name AbilityTemplateNa
 
 	SpawnNextUnitInit = new class'X2Effect_NotSoFastSpawnNextUnitInit';
 	SpawnNextUnitInit.BuildPersistentEffect(1, true, true, false, eGameRule_PlayerTurnBegin);
+	SpawnNextUnitInit.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyLongDescription(), Template.IconImage);
 	SpawnNextUnitInit.AbilityToActivate = AbilityToActivate;
 	Template.AddTargetEffect(SpawnNextUnitInit);
 

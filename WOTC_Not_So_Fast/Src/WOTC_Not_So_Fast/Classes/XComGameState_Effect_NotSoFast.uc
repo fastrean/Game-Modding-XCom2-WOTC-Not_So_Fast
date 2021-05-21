@@ -39,8 +39,6 @@ function EventListenerReturn SpawnNextUnitListener(Object EventData, Object Even
         if (!DeadUnit.IsDead() || DeadUnit == None)
             return ELR_NoInterrupt;
         
-        if (DeadUnit.DamageResults[DeadUnit.DamageResults.Length - 1].bFreeKill == true)
-
         History = `XCOMHISTORY;
         //////////////////////////////////////////////////////////////////////////
         CampaignSettings = XComGameState_CampaignSettings(History.GetSingleGameStateObjectForClass(class'XComGameState_CampaignSettings'));
