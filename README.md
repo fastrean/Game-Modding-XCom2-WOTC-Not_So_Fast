@@ -11,5 +11,5 @@ When Advent Officer got defeated, it will have a chance to spawn a Cyberus unit.
 
 When this Cyberus got defeated, it will have a chance to spawn a Avator unit.
 
-The chance to spawn is depend on game difficulty, alien Force levels, and total number of completed missions.
+The chance to spawn new unit is depend on game difficulty, alien Force levels, and total number of completed missions.
 
